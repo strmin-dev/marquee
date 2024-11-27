@@ -37,37 +37,31 @@ p{
     color: black;
 }
 
-.altleft{
-    overflow: hidden;
+
+.lefttoright{
+    display: flex;
+    position: relative;
     white-space: nowrap;
-    box-sizing: border-box;
-    animation: bounces 15s ease-in-out infinite;
+    animation: alternateBounce 5s infinite;
 }
 
-@keyframes bounces{
-    0%{
-        transform: translateX(38%);
+@keyframes alternateBounce {
+    0% {
+        transform: translateX(0);
+        color: pink;
     }
-    50%{
-        transform: translateX(-38%);
+    50% {
+        transform: translateX(80%);
+        color: yellow;
     }
     100% {
-        transform: translateX(38%);
+        transform: translateX(0);
+        color: pink;
     }
 }
 
-#marqueetxtclr{
-    animation-duration: 26s;
-    animation-name: colortxt;
-}
 
-@keyframes colortxt{
-    from{color: pink;}
-    to {color: red;}
-}
-
-
-#updown{
+.updown{
     display: block;
     overflow: hidden;
     white-space: nowrap;
@@ -92,30 +86,29 @@ p{
 }
 
 .box{
-    position: relative;
-    white-space: nowrap;
-    animation: marquee 10s linear infinite;
-    box-sizing: border-box;
-    width: 250px;
+    max-width: fit-content;
+    display: flex;
+    width: 100px;
     height: 100px;
+    position: relative;
+    animation: boxBounce 5s infinite;
+    border-radius: 10px;
 }
 
-@keyframes marquee {
-    0%{
-        transform: translateX(38%);
-        background-color: #333;
+@keyframes boxBounce {
+    0% {
+        transform: translateX(0);
+        background-color: pink;
     }
-    50%{
-        transform: translateX(-38%);
-        background-color: #ff6347;
+    50% {
+        transform: translateX(80%);
+        background-color: yellow;
     }
     100% {
-        transform: translateX(38%);
-        background-color: #32cd32; 
-        }
+        transform: translateX(0);
+        background-color: pink;
+    }
 }
- 
-
 
 .buttons{
     display: flexbox;
