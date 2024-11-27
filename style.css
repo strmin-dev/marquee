@@ -6,6 +6,8 @@
 
 html, body {
     overflow-x: hidden;
+    width: 100%;
+    display: flexbox;
 }
 
 h1{
@@ -37,7 +39,6 @@ p{
     color: black;
 }
 
-
 .lefttoright{
     display: flex;
     position: relative;
@@ -59,7 +60,6 @@ p{
         color: pink;
     }
 }
-
 
 .updown{
     display: block;
@@ -85,30 +85,40 @@ p{
     }
 }
 
-.box{
-    max-width: fit-content;
-    display: flex;
-    width: 100px;
-    height: 100px;
+.cont {
     position: relative;
-    animation: boxBounce 5s infinite;
-    border-radius: 10px;
+    width: 99%;
+    height: 150px;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flexbox;
+    padding: 12px; 
+    border: 2px solid midnightblue; 
+    border-radius: 10px; 
+    background-color: white; 
+    justify-items: center;
+    color: black;
+    overflow: hidden;
 }
 
-@keyframes boxBounce {
-    0% {
-        transform: translateX(0);
-        background-color: pink;
+.box {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    animation: bounce 5s linear infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      left: 0;
+      background-color: blue;
     }
     50% {
-        transform: translateX(80%);
-        background-color: yellow;
+      left: calc(100% - 100px);
+      background-color: red;
     }
-    100% {
-        transform: translateX(0);
-        background-color: pink;
-    }
-}
+  }
 
 .buttons{
     display: flexbox;
