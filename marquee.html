@@ -6,19 +6,19 @@
         <body>  
             <div class="container"><h1><marquee behavior="scroll" direction="right">I LOVE OLIVE</marquee><h1></div>
             <br>
-            <div class="container"><p><marquee behavior="scroll" direction="left"> sana exempted sa midterms </marquee><p></div>
+            <div class="container"><p><marquee behavior="scroll" direction="left"> sana exempted sa midterms </marquee></p></div>
             <br>
             <div class="container"><p><marquee behavior="alternate" direction="right">magkaka uno sa 1st sem amen</marquee></p></div>
             <br>
-            <div class="container"><p><marquee id="marqueetxtclr" behavior="alternate" direction="left">papasa lahat ng dcpet 1-2</marquee></p></div>
+            <div class="container"><p class="lefttoright">papasa lahat ng dcpet 1-2</p></div>
             <br>
-            <div class="container"><p><marquee behavior="scroll" direction="up" style="text-align: center;">basta marquee sha</marquee><p></div>
+            <div class="container"><p><marquee behavior="scroll" direction="up" style="text-align: center;">basta marquee sha</marquee></p></div>
             <br>
-            <div class="container"><p><marquee behavior="scroll" direction="down" style="text-align: center;">ito rin marquee</marquee><p></div>
+            <div class="container"><p><marquee behavior="scroll" direction="down" style="text-align: center;">ito rin marquee</marquee></p></div>
             <br>
-            <div class="container"><p><marquee id="updown" direction="up" height="100%" behavior="alternate">sariling gawa</marquee></p></div>
+            <div class="container"><div class="updown"><p>sariling gawa</p></div></div>
             <br>
-            <div class="container"><div class="box" id="box"> </div></div>
+            <div class="container"><div class="box" id="box"></div></div>
 
             
             <div class="buttons">
@@ -33,6 +33,10 @@
                 const marquees = document.querySelectorAll('marquee');
                 marquees.forEach(function(marquee) {
                     marquee.stop();
+                });
+                const div = document.querySelectorAll('.updown, .box, .lefttoright');
+                div.forEach(function(element) {
+                    div.stop();
                 });
             }
     
