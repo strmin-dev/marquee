@@ -1,5 +1,7 @@
 <!DOCTYPE html>
     <html>
+        <meta charset="UTF-8">
+        <meta  name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
         <head> <title> MARQUEE </title> </head>
 
@@ -18,7 +20,7 @@
             <br>
             <div class="container"><div class="updown"><p>sariling gawa</p></div></div>
             <br>
-            <div class="container"><div class="box" id="box"></div></div>
+            <div class="cont"><div class="box" id="box"></div></div>
 
             
             <div class="buttons">
@@ -34,16 +36,22 @@
                 marquees.forEach(function(marquee) {
                     marquee.stop();
                 });
-                const div = document.querySelectorAll('.updown, .box, .lefttoright');
-                div.forEach(function(element) {
-                    div.stop();
+        
+                const animatingDivs = document.querySelectorAll('.lefttoright, .updown, .box');
+                animatingDivs.forEach(function(div) {
+                    div.style.animationPlayState = 'paused';
                 });
             }
-    
+        
             function playResult() {
                 const marquees = document.querySelectorAll('marquee');
                 marquees.forEach(function(marquee) {
                     marquee.start();
+                });
+        
+                const animatingDivs = document.querySelectorAll('.lefttoright, .updown, .box');
+                animatingDivs.forEach(function(div) {
+                    div.style.animationPlayState = 'running';
                 });
             }
         </script>
